@@ -7,3 +7,12 @@ before_install:
 
 script:
   - docker run leenverbiest/docker-react npm run test -- --coverage
+
+deploy:
+  provider: heroku
+  region: "Europe"
+  app: "mydockerreact"
+  on:
+    branch: master
+  api_key:
+    secure: "$HEROKU_API_KEY"  
